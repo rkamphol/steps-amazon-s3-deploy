@@ -8,6 +8,7 @@ options = {
 	access_key: ENV['aws_access_key'],
 	secret_key: ENV['aws_secret_key'],
 	bucket_name: ENV['bucket_name'],
+	bucket_region: ENV['AWS_DEFAULT_REGION'],
 	path_in_bucket: ENV['path_in_bucket'],
 	acl: ENV['file_access_level']
 }
@@ -40,7 +41,7 @@ def s3_object_uri_for_bucket_and_path(bucket_name, path_in_bucket)
 end
 
 def public_url_for_bucket_and_path(bucket_name, path_in_bucket)
-	return "https://#{bucket_name}.s3.amazonaws.com/#{path_in_bucket}"
+	return "https://s3-#{bucket_region}.s3.amazonaws.com/#{bucket_name}/#{path_in_bucket}"
 end
 
 def export_output(out_key, out_value)
