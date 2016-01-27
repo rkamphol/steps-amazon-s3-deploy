@@ -8,7 +8,7 @@ options = {
 	access_key: ENV['aws_access_key'],
 	secret_key: ENV['aws_secret_key'],
 	bucket_name: ENV['bucket_name'],
-	bucket_region: ENV['AWS_DEFAULT_REGION'],
+	bucket_region: ENV['aws_default_region'],
 	path_in_bucket: ENV['path_in_bucket'],
 	acl: ENV['file_access_level']
 }
